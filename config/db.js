@@ -16,9 +16,7 @@ const db = devEnv ? dbLocal : mongoURI;
 const connectDB = async () => {
   try {
     const cons = await mongoose.connect(db);
-    console.log(
-      `Could not connect to MongoDB → ${cons.connection.host}`.gray.bold
-    );
+    console.log(`Connected to MongoDB → ${cons.connection.host}`.gray.bold);
   } catch (err) {
     console.log(err);
     process.exit(1);
