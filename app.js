@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 
 // requiring routes
 const sportRoute = require('./routes/sports');
+const authRoute = require('./routes/auth');
 const userRoute = require('./routes/users');
 const globalErrorHandler = require('./middlewares/errorHandler');
 const NotFoundError = require('./errors/notFound');
@@ -71,6 +72,7 @@ app.use((req, res, next) => {
 // routes middleware
 app.use('/api/v1/sports', sportRoute);
 app.use('/api/v1/users', userRoute);
+app.use('/api/v1/auth', authRoute);
 
 app.all('*', (req, res, next) => {
   next(new NotFoundError(`Can't find ${req.originalUrl} on this server`));
