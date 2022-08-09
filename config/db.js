@@ -17,7 +17,7 @@ const connectDB = async () => {
   try {
     const cons = await mongoose.connect(db);
     console.log(
-      `Could not connect to MongoDB → ${cons.connections.host}`.gray.bold
+      `Could not connect to MongoDB → ${cons.connection.host}`.gray.bold
     );
   } catch (err) {
     console.log(err);
