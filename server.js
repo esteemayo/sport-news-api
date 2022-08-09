@@ -10,8 +10,12 @@ process.on('uncaughtException', (err) => {
 
 dotenv.config({ path: './variables.env' });
 const app = require('./app');
+const connectDB = require('./config/db');
 
-app.set('port', process.env.NODE_ENV || 9999);
+// database connection
+connectDB();
+
+app.set('port', process.env.PORT || 9999);
 
 const server = app.listen(app.get('port'), () =>
   console.log(`Server running on port → ${server.address().port}`)
