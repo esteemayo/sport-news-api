@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 
 // requiring routes
 const globalErrorHandler = require('./middlewares/errorHandler');
+const NotFoundError = require('./errors/notFound');
 
 // start express app
 const app = express();
@@ -66,6 +67,10 @@ app.use((req, res, next) => {
 });
 
 // routes middleware
+
+app.all('*', (req, res, next) => {
+  next(new NotFoundError(`Can't find ${req.originalUrl} on this server`));
+});
 
 app.use(globalErrorHandler);
 
