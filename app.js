@@ -10,6 +10,7 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 
 // requiring routes
+const globalErrorHandler = require('./middlewares/errorHandler');
 
 // start express app
 const app = express();
@@ -65,5 +66,7 @@ app.use((req, res, next) => {
 });
 
 // routes middleware
+
+app.use(globalErrorHandler);
 
 module.exports = app;
