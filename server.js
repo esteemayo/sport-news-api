@@ -18,5 +18,5 @@ connectDB();
 app.set('port', process.env.PORT || 9999);
 
 const server = app.listen(app.get('port'), () =>
-  console.log(`Server running on port → ${server.address().port}`)
+  console.log(`Server running on port → ${server.address().port}`.blue.bold)
 );
