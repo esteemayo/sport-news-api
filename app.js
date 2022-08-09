@@ -49,7 +49,7 @@ app.use(express.json({ limit: '30mb' }));
 app.use(express.urlencoded({ extended: true, limit: '30mb' }));
 
 // cookie parser middleware
-app.use(cookieParser());
+app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // data sanitization against NoSQL query injection
 app.use(mongoSanitize());
