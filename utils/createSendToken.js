@@ -4,7 +4,7 @@ const createSendToken = (user, statusCode, req, res) => {
 
   res.cookie('accessToken', token, {
     expires: new Date(
-      Date.now() * process.env.COOKIE_JWT_EXPIRES + 60 * 60 * 1000
+      Date.now() + process.env.COOKIE_JWT_EXPIRES * 60 * 60 * 1000
     ),
     httpOnly: true,
     signed: true,
