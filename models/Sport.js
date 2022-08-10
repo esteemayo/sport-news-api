@@ -56,7 +56,7 @@ sportSchema.pre('save', async function (next) {
 sportSchema.pre(/^find/, function (next) {
   this.populate({
     path: 'user',
-    select: 'username image',
+    select: 'username',
   });
 
   next();
