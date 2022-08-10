@@ -7,6 +7,8 @@ const router = express.Router();
 
 router.get('/details/:slug', sportController.getSportBySlug);
 
+router.get('/search', sportController.searchSport);
+
 router
   .route('/')
   .get(sportController.getSports)
