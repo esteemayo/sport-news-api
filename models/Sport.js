@@ -53,6 +53,15 @@ sportSchema.pre('save', async function (next) {
   }
 });
 
+sportSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'user',
+    select: 'username image',
+  });
+
+  next();
+});
+
 const Sport = mongoose.models.Sport || mongoose.model('Sport', sportSchema);
 
 module.exports = Sport;
