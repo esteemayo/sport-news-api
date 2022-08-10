@@ -9,6 +9,12 @@ router.get('/details/:slug', sportController.getSportBySlug);
 
 router.get('/search', sportController.searchSport);
 
+router.get(
+  '/user-sports',
+  authMiddleware.protect,
+  sportController.getUserSports
+);
+
 router.patch(
   '/like-sport/:id',
   authMiddleware.protect,
