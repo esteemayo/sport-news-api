@@ -10,6 +10,7 @@ const sportSchema = new mongoose.Schema(
     slug: String,
     detail: {
       type: String,
+      trim: true,
       required: [true, 'A sport news must have a detail field'],
     },
     date: {
@@ -23,6 +24,11 @@ const sportSchema = new mongoose.Schema(
     image: {
       type: String,
       default: '',
+    },
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: 'User',
+      required: [true, 'A sport news must belong to a user'],
     },
   },
   {
