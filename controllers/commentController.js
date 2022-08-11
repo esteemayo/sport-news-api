@@ -61,7 +61,7 @@ exports.deleteComment = asyncHandler(async (req, res, next) => {
 
 exports.sendSportUserIds = (req, res, next) => {
   if (!req.body.user) req.body.user = req.user.id;
-  if (!req.body.sport) req.body.sport = req.params.id;
+  if (!req.body.sport) req.body.sport = req.params.sportId;
 
   next();
 };
