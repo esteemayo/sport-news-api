@@ -1,7 +1,7 @@
 {
   "name": "sport-news-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "App to find out Sport news like Football, F1, Tennis, Cricket, Boxing, Golf etc",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
