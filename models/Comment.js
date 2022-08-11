@@ -20,8 +20,19 @@ const commentSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
+
+commentSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'user',
+    select: 'name username',
+  });
+
+  next();
+});
 
 const Comment =
   mongoose.models.Comment || mongoose.model('Comment', commentSchema);
