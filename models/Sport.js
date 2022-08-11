@@ -45,6 +45,8 @@ const sportSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
 
@@ -54,6 +56,12 @@ sportSchema.index({
 });
 
 sportSchema.index({ name: 1, slug: 1 });
+
+sportSchema.virtual('comments', {
+  ref: 'Comment',
+  foreignField: 'sport',
+  localField: '_id',
+});
 
 sportSchema.pre('save', async function (next) {
   if (!this.isModified('name')) return next();
