@@ -6,6 +6,14 @@ const sportSchema = new mongoose.Schema(
     name: {
       type: String,
       required: [true, 'A sport news must have a name'],
+      maxlength: [
+        30,
+        'A sport news name must have less or equal than 50 characters',
+      ],
+      minlength: [
+        10,
+        'A sport news name must have equal or more than 10 characters',
+      ],
     },
     slug: String,
     detail: {
@@ -44,6 +52,8 @@ sportSchema.index({
   name: 'text',
   detail: 'text',
 });
+
+sportSchema.index({ name: 1, slug: 1 });
 
 sportSchema.pre('save', async function (next) {
   if (!this.isModified('name')) return next();
