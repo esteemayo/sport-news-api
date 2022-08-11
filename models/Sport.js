@@ -30,6 +30,10 @@ const sportSchema = new mongoose.Schema(
       ref: 'User',
       required: [true, 'A sport news must belong to a user'],
     },
+    likes: {
+      type: [String],
+      default: [],
+    },
   },
   {
     timestamps: true,
