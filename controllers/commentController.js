@@ -17,7 +17,7 @@ exports.updateComment = asyncHandler(async (req, res, next) => {
     );
   }
 
-  if (comment.user._id === String(req.user.id) || req.user.role === 'admin') {
+  if (comment.user.id === String(req.user.id) || req.user.role === 'admin') {
     const updatedComment = await Comment.findByIdAndUpdate(
       commentId,
       { $set: { ...req.body } },
@@ -49,7 +49,7 @@ exports.deleteComment = asyncHandler(async (req, res, next) => {
     );
   }
 
-  if (comment.user._id === String(req.user.id) || req.user.role === 'admin') {
+  if (comment.user.id === String(req.user.id) || req.user.role === 'admin') {
     await comment.remove();
 
     return res.status(StatusCodes.NO_CONTENT).json({
