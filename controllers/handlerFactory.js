@@ -6,6 +6,9 @@ const NotFoundError = require('../errors/notFound');
 
 exports.getAll = (Model) =>
   asyncHandler(async (req, res, next) => {
+    let filter = {};
+    if (req.params.sportId) filter = { sport: req.params.sportId };
+
     const features = new APIfeatures(Model.find(), req.query)
       .filter()
       .sort()
