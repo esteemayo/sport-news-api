@@ -105,7 +105,7 @@ exports.searchSport = asyncHandler(async (req, res, next) => {
 exports.getSportById = asyncHandler(async (req, res, next) => {
   const { id: sportId } = req.params;
 
-  const sport = await Sport.findById(sportId);
+  const sport = await Sport.findById(sportId).populate({ path: 'comments' });
 
   if (!sport) {
     return next(
@@ -122,7 +122,7 @@ exports.getSportById = asyncHandler(async (req, res, next) => {
 exports.getSportBySlug = asyncHandler(async (req, res, next) => {
   const { slug } = req.params;
 
-  const sport = await Sport.findOne({ slug });
+  const sport = await Sport.findOne({ slug }).populate({ path: 'comments' });
 
   if (!sport) {
     return next(
