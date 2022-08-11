@@ -9,7 +9,7 @@ exports.getAll = (Model) =>
     let filter = {};
     if (req.params.sportId) filter = { sport: req.params.sportId };
 
-    const features = new APIfeatures(Model.find(), req.query)
+    const features = new APIfeatures(Model.find(filter), req.query)
       .filter()
       .sort()
       .limitFields()
