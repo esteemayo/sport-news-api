@@ -1,9 +1,12 @@
 const express = require('express');
 
+const commentRouter = require('./comments');
 const authMiddleware = require('../middlewares/authMiddleware');
 const sportController = require('../controllers/sportController');
 
 const router = express.Router();
+
+router.use('/:sportId/comments', commentRouter);
 
 router.get('/details/:slug', sportController.getSportBySlug);
 
