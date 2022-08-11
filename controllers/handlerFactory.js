@@ -25,11 +25,14 @@ exports.getAll = (Model) =>
     });
   });
 
-exports.getOne = (Model) =>
+exports.getOne = (Model, popOptions) =>
   asyncHandler(async (req, res, next) => {
     const { id: docId } = req.params;
 
-    const doc = await Model.findById(docId);
+    let query = Model.findById(docId);
+    if (popOptions) query = query.populate(popOptions);
+
+    const doc = await query;
 
     if (!doc) {
       return next(
@@ -43,11 +46,14 @@ exports.getOne = (Model) =>
     });
   });
 
-exports.getSlug = (Model) =>
+exports.getSlug = (Model, popOptions) =>
   asyncHandler(async (req, res, next) => {
     const { slug } = req.params;
 
-    const doc = await Model.findOne({ slug });
+    let query = Model.findOne({ slug });
+    if (popOptions) query = query.populate(popOptions);
+
+    const doc = await query;
 
     if (!doc) {
       return next(
