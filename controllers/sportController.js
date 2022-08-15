@@ -113,10 +113,16 @@ exports.getSportById = asyncHandler(async (req, res, next) => {
     );
   }
 
-  res.status(StatusCodes.OK).json({
-    status: 'success',
-    sport,
-  });
+  if (sport.user.id === String(req.user.id) || req.user.role === 'admin') {
+    return res.status(StatusCodes.OK).json({
+      status: 'success',
+      sport,
+    });
+  }
+
+  return next(
+    new ForbiddenError('Not allowed! This sport news does not belong to you')
+  );
 });
 
 exports.getSportBySlug = asyncHandler(async (req, res, next) => {
