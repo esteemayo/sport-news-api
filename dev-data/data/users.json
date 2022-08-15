@@ -1,0 +1,79 @@
+[
+  {
+    "_id": "62fa6080121456392944b055",
+    "name": "Emmanuel Adebayo",
+    "username": "admin",
+    "email": "admin@sportnews.com",
+    "role": "admin",
+    "password": "$2a$12$pWU7bYzVYm3sdSViBzWLXu7t4sb42NnS2yuXSJhVCl6xg3ptlVhJm",
+    "active": true,
+    "createdAt": "2022-08-15T15:04:32.748Z",
+    "updatedAt": "2022-08-15T15:04:32.748Z"
+  },
+  {
+    "_id": "62fa60bc121456392944b05b",
+    "name": "Maye Wintheiser",
+    "username": "maye",
+    "email": "maye.admin@sportnews.com",
+    "role": "admin",
+    "password": "$2a$12$ROGBkpVIIS83h7mR65M9ref6zZNyv3KZjGXIWppUXWBhR9sH5OIpa",
+    "active": true,
+    "createdAt": "2022-08-15T15:05:32.570Z",
+    "updatedAt": "2022-08-15T15:05:32.570Z"
+  },
+  {
+    "_id": "62fa60d7121456392944b061",
+    "name": "John Doe",
+    "username": "jdoe",
+    "email": "jdoe@example.com",
+    "role": "user",
+    "password": "$2a$12$HAJkfWGplPc9PHt9HtoZo.D/IrEGwHPAG3FUC/BgzCtBRiWAHmWKS",
+    "active": true,
+    "createdAt": "2022-08-15T15:05:59.625Z",
+    "updatedAt": "2022-08-15T15:05:59.625Z"
+  },
+  {
+    "_id": "62fa60f1121456392944b067",
+    "name": "Mary Doe",
+    "username": "mdoe",
+    "email": "mdoe@example.com",
+    "role": "user",
+    "password": "$2a$12$sfjEilmL/BEdoQ1jIq89VOTAewCcnbSdjto5zZYS.y6p6/MdKeO/i",
+    "active": true,
+    "createdAt": "2022-08-15T15:06:25.765Z",
+    "updatedAt": "2022-08-15T15:06:25.765Z"
+  },
+  {
+    "_id": "62fa6111121456392944b06d",
+    "name": "Chris Vega",
+    "username": "chris",
+    "email": "chris@example.com",
+    "role": "user",
+    "password": "$2a$12$8r5C7y06IwpITGrOEcxKDubUQAz3DpMyRr6HOAH3V9ApCXKS6MEsy",
+    "active": true,
+    "createdAt": "2022-08-15T15:06:57.274Z",
+    "updatedAt": "2022-08-15T15:06:57.274Z"
+  },
+  {
+    "_id": "62fa6136121456392944b073",
+    "name": "Lourdes Browning",
+    "username": "loulou",
+    "email": "loulou@example.com",
+    "role": "user",
+    "password": "$2a$12$g52wYdGOcJRu/FTYJ265heLru9PrnAsips8vzvwoH29CA6CCrT7EC",
+    "active": true,
+    "createdAt": "2022-08-15T15:07:34.330Z",
+    "updatedAt": "2022-08-15T15:07:34.330Z"
+  },
+  {
+    "_id": "62fa6192121456392944b079",
+    "name": "Kate Morrison",
+    "username": "kate",
+    "email": "kate@example.com",
+    "role": "user",
+    "password": "$2a$12$fey4xInsqyO4sZ1HywEuae4tSRclIuskl7KNGQPq31nu8GnU3gk8G",
+    "active": true,
+    "createdAt": "2022-08-15T15:09:06.583Z",
+    "updatedAt": "2022-08-15T15:09:06.583Z"
+  }
+]
