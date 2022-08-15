@@ -31,7 +31,7 @@ router
 
 router
   .route('/:id')
-  .get(sportController.getSportById)
+  .get(authMiddleware.protect, sportController.getSportById)
   .patch(authMiddleware.protect, sportController.updateSport)
   .delete(authMiddleware.protect, sportController.deleteSport);
 
