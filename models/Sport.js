@@ -7,8 +7,8 @@ const sportSchema = new mongoose.Schema(
       type: String,
       required: [true, 'A sport news must have a name'],
       maxlength: [
-        50,
-        'A sport news name must have less or equal than 50 characters',
+        100,
+        'A sport news name must have less or equal than 100 characters',
       ],
       minlength: [
         10,
