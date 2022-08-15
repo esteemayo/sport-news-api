@@ -37,7 +37,7 @@ exports.getSports = asyncHandler(async (req, res, next) => {
 
   // pagination
   const page = +req.query.page || 1;
-  const limit = +req.query.limit || 100;
+  const limit = +req.query.limit || 5;
   const skip = (page - 1) * limit;
 
   const total = await Sport.countDocuments();
